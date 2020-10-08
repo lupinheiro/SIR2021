@@ -1,4 +1,4 @@
-# :open_file_folder: Sistemas de Informação e Rede - 2020/2021
+# :open_file_folder: Sistemas de Informação em Rede - 2020/2021
 
 :cloud: Repositório de recursos de apoio ao aluno.
 
