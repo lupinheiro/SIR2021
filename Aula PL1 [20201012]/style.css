@@ -1,0 +1,109 @@
+/*CSS paragrafos que estão dentro de uma div*/
+
+div p {
+    color: blue;
+}
+
+
+/*CSS paragrafos que são filhos diretos de uma div*/
+
+div>p {
+    color: red;
+}
+
+
+/*CSS todos paragrafos que estão depois de uma div*/
+
+div~p {
+    color: green;
+}
+
+
+/*CSS paragrafos que são adjacentes (imediatamente a seguir) a uma div*/
+
+div+p {
+    color: violet;
+}
+
+
+/*CSS mouse hover muda*/
+
+.changeBG:hover {
+    background-color: gold;
+    font-size: 30px;
+}
+
+
+/*CSS estilo "striped" a parágrafos*/
+
+div.lista>p:nth-child(n) {
+    background-color: black;
+}
+
+div.lista>p:nth-child(2n) {
+    background-color: gold;
+}
+
+.bigbox {
+    display: flex;
+}
+
+
+/*CSS todos os elementos com a class box*/
+
+.box {
+    width: 50%;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.box1 {
+    background-color: red;
+}
+
+.box2 {
+    background-color: blue;
+}
+
+
+/*CSS altera o conteudo dos elementos que a extensao acaba em*/
+
+div.listagem ul a[href$=pdf]::after {
+    content: ' (PDF)'
+}
+
+
+/*CSS alterar dístico/numeração dos elementos da lista*/
+
+ol {
+    list-style-type: upper-roman;
+}
+
+
+/* CSS quando a página está em modo impressão */
+
+@media print {
+    * {
+        background-color: red;
+        color: gold
+    }
+}
+
+
+/* CSS quando a página tem pelo menos 500px*/
+
+@media screen and (min-width: 500px) {
+    body {
+        background-color: green;
+    }
+}
+
+
+/* CSS quando a página tem no máximo 800px*/
+
+@media screen and (max-width: 800px) {
+    body {
+        background-color: gold;
+    }
+}
