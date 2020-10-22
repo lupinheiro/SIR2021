@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Euromilhões</title>
+</head>
+<body>
+
+    <div>
+        <h1>Euromilhões</h1>
+    </div>
+
+    <div>
+        <button id="gera">Gera chave</button>
+        <button id="limpa">Limpa chave</button>
+    </div>
+
+    <div id="content">
+
+    </div>
+</body>
+<script>
+    var gera = document.getElementById('gera')
+    var limpa = document.getElementById('limpa')
+    var divContent = document.getElementById('content')
+
+    limpa.onclick = function () {
+        divContent.innerHTML = ""
+    }
+    
+    gera.addEventListener('click', geraChave)
+
+    function geraChave() {
+        var chave = {
+            estrelas: [],
+            numeros: [],
+        }
+
+        // Gerar chave com estrelas e números
+        chave.estrelas = extrator(1, 12, 2)
+        chave.numeros = extrator(1, 50, 5)
+
+        var divChave = document.createElement('div')
+        divChave.className = "chave"
+        // <div class="chave"></div>
+
+        var listaEstrelas = document.createElement('ul')
+        listaEstrelas.className = 'estrelas'
+        // <ul class="estrelas"></ul>
+        
+        var listaNumeros = document.createElement('ul')
+        listaNumeros.className = 'numeros'
+        // <ul class="numeros"></ul>
+
+        divChave.appendChild(listaEstrelas)
+        divChave.appendChild(listaNumeros)
+        // <div class="chave">
+        //      <ul class="estrelas"></ul>
+        //      <ul class="numeros"></ul>
+        // </div>
+
+        // Adicionar valores do array às listas
+        array2List(listaEstrelas, chave.estrelas)
+        array2List(listaNumeros, chave.numeros)
+
+        divContent.appendChild(divChave)
+
+        // Criar elementos numa lista a partir de um array
+        function array2List(lista, chave){
+            for(var valor of chave){
+                var li = document.createElement('li')
+                li.innerHTML = valor
+                lista.appendChild(li)
+            }
+        }
+        
+        // Retorna um array de valores únicos
+        function extrator(min, max, n){
+            var extracao = []
+
+            while(extracao.length<n){
+                // Gera um valor aleatório no intervalo pretendido
+                var num = Math.floor(Math.random() * (max - min +1)) + min
+                
+                // Impede valores repetidos
+                if(extracao.indexOf(num)<0){
+                    extracao.push(num)
+                }
+            }
+
+            // Ordenar array por ordem crescente
+            extracao.sort(ordenar)
+
+            return extracao
+        }
+
+        function ordenar(a,b) {
+            return a-b
+        }
+        
+    }
+
+
+</script>
+</html>
