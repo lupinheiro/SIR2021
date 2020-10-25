@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<title>Aula TP 3</title>
+<style>
+    name {
+        color: rgb(0, 81, 255);
+        font-size: 22px;
+        font-weight: 900;
+    }
+    
+    price,
+    description,
+    calories {
+        margin-left: 20px;
+        color: red;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    breakfast_menu,
+    food {
+        display: grid
+    }
+</style>
+
+<body>
+    <breakfast_menu>
+        <food>
+            <name>Belgian Waffles</name>
+            <price>$5.95</price>
+            <description>Two of our famous Belgian Waffles with plenty of real maple syrup</description>
+            <calories>650</calories>
+        </food>
+        <food>
+            <name>Strawberry Belgian Waffles</name>
+            <price>$7.95</price>
+            <description>Light Belgian waffles covered with strawberries and whipped cream</description>
+            <calories>900</calories>
+        </food>
+        <food>
+            <name>Berry-Berry Belgian Waffles</name>
+            <price>$8.95</price>
+            <description>Light Belgian waffles covered with an assortment of fresh berries and whipped cream</description>
+            <calories>900</calories>
+        </food>
+        <food>
+            <name>French Toast</name>
+            <price>$4.50</price>
+            <description>Thick slices made from our homemade sourdough bread</description>
+            <calories>600</calories>
+        </food>
+        <food>
+            <name>Homestyle Breakfast</name>
+            <price>$6.95</price>
+            <description>Two eggs, bacon or sausage, toast, and our ever-popular hash browns</description>
+            <calories>950</calories>
+        </food>
+    </breakfast_menu>
+
+    <p id="utilizador">
+    </p>
+
+</body>
+
+<script>
+    var utilizador = {
+        name: "John",
+        age: 30,
+        cars: {
+            car1: "Ford",
+            car2: "BMW",
+            car3: "Fiat"
+        }
+    };
+
+    document.getElementById('utilizador').innerHTML = 'Nome: ' + utilizador.name + '<br>Carro 1: ' + utilizador.cars.car1
+
+    console.log(utilizador);
+
+    console.log(document.getElementsByTagName('food'))
+</script>
+
+</html>
